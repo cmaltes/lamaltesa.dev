@@ -1,0 +1,392 @@
+/* lamaltesa.dev — colores y tipografías del manual de identidad v1.0 */
+:root {
+  --tostado: #22160E;
+  --ambar: #E0A33A;
+  --espuma: #F3E6CF;
+  --cebada: #C9B79A;
+  --ambar-oscuro: #8F570C;
+
+  /* Versión negativo (principal): sobre tostado */
+  --bg: var(--tostado);
+  --surface: #2c1e14;
+  --text: var(--espuma);
+  --muted: var(--cebada);
+  --accent: var(--ambar);
+  --border: #3d2c1f;
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: light) {
+  /* Versión positivo: sobre espuma */
+  :root {
+    --bg: #FBF6EE;
+    --surface: #ffffff;
+    --text: var(--tostado);
+    --muted: #6b5a48;
+    --accent: var(--ambar-oscuro);
+    --border: #e8dcc8;
+    color-scheme: light;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Lora, Georgia, serif;
+  font-size: 18px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent); }
+
+img { max-width: 100%; }
+
+h1, h2, h3 {
+  font-family: Lora, Georgia, serif;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 0 0.5em;
+}
+
+h2 { font-size: clamp(1.8rem, 4vw, 2.4rem); }
+
+section, .topbar, footer {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.mono, .prompt, .meta, .stack, .label, .link, nav a {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+/* --- Cabecera ------------------------------------------------------------------------ */
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 28px;
+  padding-bottom: 28px;
+}
+
+.brand { display: block; line-height: 0; }
+.brand img { width: 168px; height: auto; }
+
+nav { display: flex; gap: 24px; }
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+nav a:hover { color: var(--accent); }
+
+/* --- Hero ---------------------------------------------------------------------------- */
+
+.hero { padding-top: 64px; padding-bottom: 88px; }
+
+.hero h1 {
+  font-size: clamp(2.2rem, 6vw, 3.8rem);
+  max-width: 16ch;
+}
+
+.lead {
+  font-size: 1.2rem;
+  color: var(--muted);
+  max-width: 38em;
+  margin: 0 0 24px;
+}
+
+.prompt { color: var(--accent); font-size: 0.9rem; margin: 0; }
+.cursor { animation: blink 1.1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .cursor { animation: none; } }
+
+/* --- Proyectos ----------------------------------------------------------------------- */
+
+.projects { padding-bottom: 72px; }
+
+.project {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: 40px;
+  align-items: center;
+  padding: 40px 0;
+  border-top: 1px solid var(--border);
+}
+
+.info h3 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 2rem;
+  margin-bottom: 0.2em;
+}
+.info h3 img { border-radius: 9px; }
+
+.meta {
+  color: var(--muted);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 12px;
+}
+.status { color: var(--accent); }
+
+.tagline { font-style: italic; font-size: 1.2rem; margin: 0 0 12px; }
+.info p:not(.meta):not(.tagline) { color: var(--muted); margin: 0 0 16px; }
+
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  font-size: 0.75rem;
+}
+.stack li {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 2px 8px;
+  color: var(--muted);
+}
+
+.link {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.link:hover { text-decoration: underline; }
+
+/* Cada vista previa usa la estética de su app, no la de lamaltesa */
+.preview {
+  border-radius: 16px;
+  padding: 20px;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* Recuérdame — Nunito, redondeado, chips con color de categoría */
+.preview-recuerdame {
+  background: #f6fbfa;
+  color: #0f1f1d;
+  font-family: Nunito, system-ui, sans-serif;
+  border-radius: 28px;
+}
+.rc-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 900;
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+.rc-bar img { border-radius: 8px; }
+.rc-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  border: 1px solid #dbe7e5;
+  border-left: 5px solid var(--c);
+  border-radius: 18px;
+  padding: 10px 14px;
+  line-height: 1.3;
+  box-shadow: 0 10px 24px -16px rgba(15, 118, 110, 0.5);
+}
+.rc-card > span {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--c) 16%, white);
+  flex: none;
+}
+.rc-card b { display: block; font-weight: 800; font-size: 0.95rem; }
+.rc-card small { color: #5b6b69; font-weight: 700; font-size: 0.78rem; }
+
+/* kiddiTours — shadcn neutro, Inter, turquesa principal */
+.preview-kiddi {
+  background: #f5f5f5;
+  color: #0a0a0a;
+  font-family: Inter, system-ui, sans-serif;
+  border-radius: 10px;
+}
+.kt-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+}
+.kt-head img { border-radius: 7px; }
+.kt-card {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  padding: 16px;
+  line-height: 1.35;
+}
+.kt-title { font-weight: 600; margin: 0; font-size: 1rem; }
+.kt-sub { color: #737373; font-size: 0.8rem; margin: 2px 0 12px; }
+.kt-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+  font-size: 0.85rem;
+}
+.kt-steps li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.kt-steps li::before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #0d9488;
+  flex: none;
+}
+.kt-steps li.done::before {
+  background: #0d9488 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f0fdfa' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center / 10px no-repeat;
+}
+.kt-steps li.done { color: #737373; }
+
+/* SchoolDocs — Poppins extrabold, fondo zinc, «Docs» en turquesa */
+.preview-schooldocs {
+  background: #d6d6da;
+  color: #0c0a09;
+  font-family: Poppins, system-ui, sans-serif;
+  border-radius: 12px;
+  align-items: flex-start;
+}
+.sd-brand { font-weight: 800; font-size: 1.1rem; margin: 0; letter-spacing: -0.02em; }
+.sd-brand span, .sd-title { color: #0d9488; }
+.sd-title {
+  font-weight: 800;
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin: 0 0 6px;
+}
+.sd-doc {
+  position: relative;
+  align-self: stretch;
+  background: #fff;
+  border: 1px solid #c4c4ca;
+  border-radius: 12px;
+  padding: 16px;
+  display: grid;
+  gap: 8px;
+}
+.sd-line { display: block; height: 8px; border-radius: 4px; background: #e4e4e7; }
+.w80 { width: 80%; } .w70 { width: 70%; } .w60 { width: 60%; }
+.sd-pdf {
+  position: absolute;
+  right: 14px;
+  bottom: 12px;
+  font-weight: 800;
+  font-size: 0.7rem;
+  color: #fff;
+  background: #0d9488;
+  border-radius: 6px;
+  padding: 2px 8px;
+}
+.sd-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  background: #0d9488;
+  color: #fff;
+  font: 800 0.8rem Poppins, system-ui, sans-serif;
+  font-style: normal;
+}
+
+/* Separador alineado con el contenido (sin el relleno lateral de la sección) */
+.about, footer {
+  background: linear-gradient(var(--border), var(--border)) top center / calc(100% - 32px) 1px no-repeat;
+}
+
+/* --- Sobre mí ------------------------------------------------------------------------ */
+
+.about {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: 48px;
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+.about-text p { color: var(--muted); margin: 0 0 16px; }
+.about-text p:first-of-type { color: var(--text); font-size: 1.15rem; }
+
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+.button {
+  display: inline-block;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  background: var(--accent);
+  color: var(--bg);
+}
+.button-ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+.button:hover { filter: brightness(1.08); }
+
+.name-story {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  align-self: start;
+}
+.label { color: var(--accent); font-size: 0.8rem; margin: 0 0 12px; }
+.name-story dl { margin: 0; }
+.name-story dt { font-style: italic; font-weight: 700; }
+.name-story dd { margin: 0 0 12px; color: var(--muted); font-size: 0.95rem; }
+.name-story dd:last-child { margin-bottom: 0; }
+
+/* --- Pie ----------------------------------------------------------------------------- */
+
+footer {
+  padding-top: 32px;
+  padding-bottom: 48px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+footer p { margin: 0; }
+
+/* --- Móvil --------------------------------------------------------------------------- */
+
+@media (max-width: 760px) {
+  .project, .about { grid-template-columns: 1fr; gap: 24px; }
+  .hero { padding-top: 32px; padding-bottom: 56px; }
+  .brand img { width: 140px; }
+  nav { gap: 16px; }
+  .preview { min-height: 0; }
+}

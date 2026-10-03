@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>lamaltesa.dev · Fernando Munguía</title>
+  <meta name="description" content="Las apps que hago en mis ratos libres: Recuérdame, kiddiTours y SchoolDocs. Fernando Munguía Hoyo, profesor y desarrollador en Cantabria.">
+  <meta name="theme-color" content="#22160E">
+  <meta property="og:title" content="lamaltesa.dev · Fernando Munguía">
+  <meta property="og:description" content="Recuérdame, kiddiTours y SchoolDocs: las apps que hago en mis ratos libres.">
+  <meta property="og:image" content="https://lamaltesa.dev/img/og-image.png">
+  <meta property="og:url" content="https://lamaltesa.dev/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,700&family=JetBrains+Mono:wght@400;700&family=Nunito:wght@700;800;900&family=Inter:wght@400;600&family=Poppins:wght@800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="lamaltesa.dev, inicio">
+      <picture>
+        <source srcset="img/lamaltesa-horizontal-positivo.svg" media="(prefers-color-scheme: light)">
+        <img src="img/lamaltesa-horizontal-negativo.svg" alt="lamaltesa.dev" width="168" height="77">
+      </picture>
+    </a>
+    <nav>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#sobre-mi">Sobre mí</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Hola, soy Fernando y aprendo en público.</h1>
+      <p class="lead">Profesor de día y desarrollador en los ratos libres. Aquí están las apps que voy haciendo: pequeñas, útiles y hechas con cariño.</p>
+      <p class="prompt">&gt; cantabria · 3 proyectos en marcha<span class="cursor">_</span></p>
+    </section>
+
+    <section id="proyectos" class="projects">
+      <h2>Proyectos</h2>
+
+      <!-- Recuérdame: su propio mundo es Nunito, esquinas muy redondas y tarjetas con color de categoría -->
+      <article class="project">
+        <div class="preview preview-recuerdame" aria-hidden="true">
+          <div class="rc-bar"><img src="img/recuerdame.svg" alt="" width="28" height="28"> Recordatorios</div>
+          <div class="rc-card" style="--c:#16a34a"><span>🪴</span><div><b>Regar las plantas</b><small>↻ Cada 3 días</small></div></div>
+          <div class="rc-card" style="--c:#7c3aed"><span>👵</span><div><b>Llamar a la abuela</b><small>↻ Cada semana</small></div></div>
+          <div class="rc-card" style="--c:#0d9488"><span>💧</span><div><b>Filtro del agua</b><small>↻ Cada 6 meses</small></div></div>
+        </div>
+        <div class="info">
+          <p class="meta">app android · <span class="status">en pruebas</span> · v1.2</p>
+          <h3><img src="img/recuerdame.svg" alt="" width="32" height="32"> Recuérdame</h3>
+          <p class="tagline">No es cuándo, es cada cuánto.</p>
+          <p>Recordatorios para lo que se repite sin fecha fija: regar las plantas, cambiar el filtro, llamar a la abuela. Lo marcas como hecho y la cuenta vuelve a empezar. Avisa al llegar a casa, permite compartir tareas con la familia y está en 7 idiomas.</p>
+          <ul class="stack"><li>Expo</li><li>React Native</li><li>AWS Amplify</li><li>Kotlin</li></ul>
+          <a class="link" href="https://recuerdame.lamaltesa.dev">recuerdame.lamaltesa.dev <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <!-- kiddiTours: estética shadcn neutra, iconos lucide, turquesa como principal -->
+      <article class="project">
+        <div class="preview preview-kiddi" aria-hidden="true">
+          <div class="kt-head"><img src="img/kidditours.svg" alt="" width="28" height="28"> kiddiTours</div>
+          <div class="kt-card">
+            <p class="kt-title">Santander en familia</p>
+            <p class="kt-sub">Sábado · 4 misiones · fin hacia las 13:30</p>
+            <ol class="kt-steps">
+              <li class="done">Faro de Cabo Mayor</li>
+              <li class="done">Península de La Magdalena</li>
+              <li>Centro Botín</li>
+            </ol>
+          </div>
+        </div>
+        <div class="info">
+          <p class="meta">app web y móvil · <span class="status">v1.0</span></p>
+          <h3><img src="img/kidditours.svg" alt="" width="32" height="32"> kiddiTours</h3>
+          <p class="tagline">Rutas por la ciudad para descubrir en familia.</p>
+          <p>Búsquedas del tesoro guiadas para que niños y padres recorran juntos una ciudad. Elige ciudad, día y cuánto tiempo tenéis: usa lugares reales de Google Maps, los ordena para caminar lo menos posible y adapta el contenido de cada misión a los peques y a los mayores.</p>
+          <ul class="stack"><li>Expo</li><li>tRPC</li><li>PostgreSQL</li><li>IA</li></ul>
+          <a class="link" href="https://kidditours.vercel.app">kidditours.vercel.app <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <!-- SchoolDocs: Poppins extrabold, fondo zinc y «Docs» en turquesa -->
+      <article class="project">
+        <div class="preview preview-schooldocs" aria-hidden="true">
+          <p class="sd-brand">School <span>Docs</span></p>
+          <p class="sd-title">Programación didáctica fácil</p>
+          <div class="sd-doc">
+            <span class="sd-line w80"></span><span class="sd-line w60"></span><span class="sd-line w70"></span>
+            <span class="sd-pdf">PDF</span>
+          </div>
+        </div>
+        <div class="info">
+          <p class="meta">app web · <span class="status">demo bajo petición</span></p>
+          <h3><span class="sd-mark" aria-hidden="true">SD</span> SchoolDocs</h3>
+          <p class="tagline">Programación didáctica fácil.</p>
+          <p>Nace de mi trabajo como profesor: un gestor de documentos escolares para hacer programaciones didácticas sencillas y que cumplan la normativa. Genera el PDF o permite consultar la programación de forma interactiva, para dedicar el tiempo a lo importante.</p>
+          <ul class="stack"><li>Next.js</li><li>tRPC</li><li>Prisma</li><li>Tailwind</li></ul>
+          <a class="link" href="https://www.schooldocs.es">schooldocs.es <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+    </section>
+
+    <section id="sobre-mi" class="about">
+      <div class="about-text">
+        <h2>Sobre mí</h2>
+        <p>Soy Fernando Munguía Hoyo, de Cantabria (España). Profesor, esposo y padre de dos criaturas, con algún pasatiempo un poco raro como hacer aplicaciones y, de vez en cuando, deporte.</p>
+        <p>Mis apps son gratis y sin anuncios. Si alguna te resulta útil, puedes invitarme a un café: me ayuda a pagar los servidores y a seguir mejorándolas.</p>
+        <div class="actions">
+          <a class="button" href="https://ko-fi.com/fernandomunguia">Invítame a un Ko-fi ☕</a>
+          <a class="button button-ghost" href="https://github.com/cmaltes">GitHub</a>
+        </div>
+      </div>
+      <aside class="name-story">
+        <p class="label">// por qué lamaltesa</p>
+        <dl>
+          <dt>Corto Maltés</dt><dd>El marino de los cómics: curiosidad y ganas de meterse en líos interesantes.</dd>
+          <dt>La malta</dt><dd>La cebada que da cuerpo a la cerveza. De ahí la espiga y los colores.</dd>
+          <dt>Malta, el país</dt><dd>Un año viviendo en la isla.</dd>
+        </dl>
+      </aside>
+    </section>
+  </main>
+
+  <footer>
+    <p>Hecho con cariño en Cantabria · © 2026 Fernando Munguía Hoyo</p>
+  </footer>
+</body>
+</html>
