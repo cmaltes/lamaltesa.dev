@@ -1,30 +1,28 @@
-/* lamaltesa.dev — colores y tipografías del manual de identidad v1.0 */
+/* lamaltesa.dev — tipografías del manual de identidad; color turquesa compartido por todas las apps */
 :root {
-  --tostado: #22160E;
-  --ambar: #E0A33A;
-  --espuma: #F3E6CF;
-  --cebada: #C9B79A;
-  --ambar-oscuro: #8F570C;
+  --turquesa: #0d9488;
 
-  /* Versión negativo (principal): sobre tostado */
-  --bg: var(--tostado);
-  --surface: #2c1e14;
-  --text: var(--espuma);
-  --muted: var(--cebada);
-  --accent: var(--ambar);
-  --border: #3d2c1f;
+  /* Oscuro (por defecto): el logo en versión negativo sobre fondo muy oscuro */
+  --bg: #07100f;
+  --surface: #111b1a;
+  --text: #eef7f5;
+  --muted: #9fb1ae;
+  --accent: #2dd4bf;
+  --on-accent: #042f2e;
+  --border: #22302e;
   color-scheme: dark;
 }
 
 @media (prefers-color-scheme: light) {
-  /* Versión positivo: sobre espuma */
+  /* Claro: el logo en versión positivo */
   :root {
-    --bg: #FBF6EE;
+    --bg: #f6fbfa;
     --surface: #ffffff;
-    --text: var(--tostado);
-    --muted: #6b5a48;
-    --accent: var(--ambar-oscuro);
-    --border: #e8dcc8;
+    --text: #0f1f1d;
+    --muted: #5b6b69;
+    --accent: #0f766e;
+    --on-accent: #ffffff;
+    --border: #dbe7e5;
     color-scheme: light;
   }
 }
@@ -177,6 +175,7 @@ nav a:hover { color: var(--accent); }
   flex-direction: column;
   gap: 10px;
   justify-content: center;
+  border: 1px solid var(--border);
 }
 
 /* Recuérdame — Nunito, redondeado, chips con color de categoría */
@@ -349,7 +348,7 @@ nav a:hover { color: var(--accent); }
   padding: 10px 18px;
   border-radius: 6px;
   background: var(--accent);
-  color: var(--bg);
+  color: var(--on-accent);
 }
 .button-ghost {
   background: transparent;
